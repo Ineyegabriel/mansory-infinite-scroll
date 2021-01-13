@@ -23,7 +23,7 @@ const PreviewPage = () => {
   } = location.state;
  
   return (
-    <div className={Styles.preview}>
+    <div className={Styles.preview} data-test="component-wrapper">
       <div className={Styles.imageContainer}>
         <Image src={largeImageURL} fluid />
       </div>
