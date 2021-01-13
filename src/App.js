@@ -1,19 +1,19 @@
 import React from "react";  
-import { Router, Route } from "react-router-dom";  
+import { Route, Switch } from "react-router-dom";  
 import HomePage from "./Pages/HomePage";  
-import { createBrowserHistory as createHistory } from "history";  
-import TopBar from "./Components/TopBar";  
 import "./App.css";  
-const history = createHistory();
+import Layout from "./Components/Layout";
+import PreviewPage from "./Pages/PreviewPage";
+
 
 function App() {  
   return (  
-    <div className="App">  
-      <Router history={history}>  
-        <TopBar />  
-        <Route path="/" exact component={HomePage} />  
-      </Router>  
-    </div>  
+        <Switch data-test="component-layout">
+            <Layout>
+                <Route path="/" exact component={HomePage}  className="page"/> 
+                <Route path="/preview" component={PreviewPage}  className="page"/> 
+            </Layout>
+        </Switch>
   );  
 }
 
